@@ -1,6 +1,5 @@
 var game = new Game()
 
-
 //////////////////////////////////////////////////////////walkUp, walkDown, walkRight, walkLeft
 
 $('.message').toggle();
@@ -33,10 +32,10 @@ Game.prototype.walkDown = function () {
   } else if (
     this.maze[this.player.y + 1][this.player.x] === "W") {
     console.log("you cannot go through walls")
- //if he hits a wall while going down (y+1)
+    //if he hits a wall while going down (y+1)
   } else if (
     this.maze[this.player.y + 1][this.player.x] === "$") {
-  // if he finds $$$ while going down (y+1)
+    // if he finds $$$ while going down (y+1)
     var victory = confirm("Congratulations, you found your way out!")
   } else {
     this.player.y += 1; //this.player is now one step down(y+1)
@@ -70,10 +69,10 @@ Game.prototype.walkLeft = function () {
   if (this.player.x == 0) {
     // if player is on left border
     console.log("left border")
-  } else if ( this.maze[this.player.y][this.player.x - 1] === "W") {
+  } else if (this.maze[this.player.y][this.player.x - 1] === "W") {
     //if he hits a wall while going left (x-1)
     console.log("hit a wall")
-  } else if ( this.maze[this.player.y][this.player.x - 1] === "$") {
+  } else if (this.maze[this.player.y][this.player.x - 1] === "$") {
     // if he finds $$$ while going left (x-1)
     var victory = confirm("Congratulations, you found your way out!")
 
@@ -85,11 +84,7 @@ Game.prototype.walkLeft = function () {
   }
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////// Keys to move
-
-
 
 $(window).on('keydown', function (event) {
   console.log(" you pressed a key ")
@@ -127,7 +122,6 @@ $(window).on('keydown', function (event) {
   askQuestion()
 });
 
-
 ////////////////////////////////////////////////////////////////////////////////////building mazetiles
 
 for (var i = 0; i < 21; i++) {
@@ -163,31 +157,46 @@ function updateMaze() {
 }
 updateMaze();
 
-
 //////////////////////////////////////////////////////////////////////////////////////////QUESTIONTIME
-var questions = [
-  {
-    q:"1+1=?",
-    a: "2",
+var questions = [{
+    q: "What belongs to you but is used more by others?",
+    a: "name",
     answered: false
   },
   {
-    q:"2+2=?",
-    a: "4",
+    q: "What kind of room has no doors or windows?",
+    a: "mushroom",
     answered: false
   },
   {
-    q:"3+3=?",
-    a: "6",
+    q: "I am a ship that can be made to ride the greatest waves. I am not built by tool, but built by hearts and minds. What am I?",
+    a: "friendship",
     answered: false
-  }
+  },
+  {
+    q: "What is easy to get into, but hard to get out of?",
+    a: "trouble",
+    answered: false
+  },
+  {
+    q: "If I have it, I don't share it. If I share it, I don't have it. What is it?",
+    a: "secret",
+    answered: false
+  }, 
+  {
+    q: "What is the beginning of eternity, the end of time and space, the beginning of every end and the end of every race?",
+    a: "e",
+    answered: false
+  },
 ];
+
+/////////////////////////////////////////////////////////////QUESTIONS
 
 function askQuestion() {
 
-  if ( (game.player.y === 5 && game.player.x === 4) && !questions[0].answered ) {
+  if ((game.player.y === 5 && game.player.x === 4) && !questions[0].answered) {
     console.log("ANSWER THIS QUESTION")
-    var answer = prompt (questions[0].q)
+    var answer = prompt(questions[0].q)
     if (answer === questions[0].a) {
       questions[0].answered = true
       $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
@@ -199,19 +208,96 @@ function askQuestion() {
       updateMaze()
     }
   }
+  if ((game.player.y === 15 && game.player.x === 5) && !questions[1].answered) {
+    console.log("ANSWER THIS QUESTION")
+    var answer = prompt(questions[1].q)
+    if (answer === questions[1].a) {
+      questions[1].answered = true
+      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
+    } else {
+      game.player.y = 15
+      game.player.x = 4
+      game.maze[game.player.y][game.player.x] = "P"
+      game.maze[15][5] = "X"
+      updateMaze()
+    }
+  }
+  if ((game.player.y === 1 && game.player.x === 11) && !questions[2].answered) {
+    console.log("ANSWER THIS QUESTION")
+    var answer = prompt(questions[2].q)
+    if (answer === questions[2].a) {
+      questions[2].answered = true
+      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
+    } else {
+      game.player.y = 1
+      game.player.x = 10
+      game.maze[game.player.y][game.player.x] = "P"
+      game.maze[1][11] = "X"
+      updateMaze()
+    }
+  }
+  if ((game.player.y === 1 && game.player.x === 11) && !questions[2].answered) {
+    console.log("ANSWER THIS QUESTION")
+    var answer = prompt(questions[2].q)
+    if (answer === questions[2].a) {
+      questions[2].answered = true
+      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
+    } else {
+      game.player.y = 1
+      game.player.x = 10
+      game.maze[game.player.y][game.player.x] = "P"
+      game.maze[1][11] = "X"
+      updateMaze()
+    }
+  }
+  if ((game.player.y === 16 && game.player.x === 16) && !questions[3].answered) {
+    console.log("ANSWER THIS QUESTION")
+    var answer = prompt(questions[3].q)
+    if (answer === questions[3].a) {
+      questions[3].answered = true
+      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
+    } else {
+      game.player.y = 16
+      game.player.x = 17
+      game.maze[game.player.y][game.player.x] = "P"
+      game.maze[16][16] = "X"
+      updateMaze()
+    }
+  }
+  if ((game.player.y === 19 && game.player.x === 19) && !questions[4].answered) {
+    console.log("ANSWER THIS QUESTION")
+    var answer = prompt(questions[4].q)
+    if (answer === questions[4].a) {
+      questions[4].answered = true
+      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
+    } else {
+      game.player.y = 19
+      game.player.x = 18
+      game.maze[game.player.y][game.player.x] = "P"
+      game.maze[19][19] = "X"
+      updateMaze()
+    }
+  }
+  if ((game.player.y === 14 && game.player.x === 9) && !questions[5].answered) {
+    console.log("ANSWER THIS QUESTION")
+    var answer = prompt(questions[5].q)
+    if (answer === questions[5].a) {
+      questions[5].answered = true
+      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
+    } else {
+      game.player.y = 15
+      game.player.x = 9
+      game.maze[game.player.y][game.player.x] = "P"
+      game.maze[14][9] = "X"
+      updateMaze()
+    }
+  }
 }
-
-
-
-
-
 
 ////////////////////////////////////////////////////////////////////////Restart Button
 
 $(".button").click(function () {
-  console.log( "clicked restart" )
+  console.log("clicked restart")
   game = new Game();
   updateMaze();
 })
-
-

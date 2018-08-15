@@ -41,7 +41,7 @@ body {
 #playground {
   width: 650px;
   height: 640px;
-  background-color: rgb #fff;
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -61,7 +61,7 @@ body {
 .player {
   box-sizing: border-box;
   background-image: url("pics/Little_flame_character.gif");
-  background-color: blue;
+  background-color: black;
 }
 
 .wall {
@@ -75,8 +75,8 @@ body {
   background-image: url("pics/treasures.png")
 }
 .questiontime {
-  border: 1px solid red;
+  border: 1px solid #08281f; 
 }
 .message {
-  background-color: pink;
+  background-color: goldenrod;
 }
