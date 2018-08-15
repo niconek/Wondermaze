@@ -1,0 +1,82 @@
+h1 {
+  padding: 10px;
+  font-size: 5em;
+  letter-spacing: -3px;
+  color:  black;
+  text-shadow: -20px 30px 10px #f1b329,
+                20px -30px 10px #f1b329, 
+                -30px 20px 10px #be4a14, 
+                30px -20px 10px #be4a14;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  background-image: url("Wonderland_Maze.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+  color: #982657
+}
+
+.game {
+    min-width: 650px;
+    min-height: 640px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    clear: both;
+    
+}
+.button{
+  padding: 10px;
+  margin: 20px;
+  font-size: 1.5em;
+  background-color: #be4a14;
+  border-radius: 20px;
+  border-color: #9b390c;
+}
+#playground {
+  width: 650px;
+  height: 640px;
+  background-color: rgb #fff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tile {
+  background-color: rgb(96, 222, 226); 
+  background-image: url("/Cobblestone.png");
+  background-size: cover;
+  border: 1px solid #373848; 
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 4.762%;
+  min-height: 4.762%;
+}
+
+.player {
+  box-sizing: border-box;
+  background-image: url("/Little_flame_character.gif");
+  background-color: blue;
+}
+
+.wall {
+  background-color: #08281f;
+  background-image: url("/baum.png");
+  background-size: cover;
+}
+
+.victory {
+  background-color: goldenrod;
+  background-image: url("/treasures.png")
+}
+.questiontime {
+  border: 1px solid red;
+}
+.message {
+  background-color: pink;
+}
