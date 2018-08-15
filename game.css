@@ -12,7 +12,7 @@ h1 {
 body {
   font-family: 'Playfair Display', serif;
   display: flex;
-  background-image: url("Wonderland_Maze.jpg");
+  background-image: url("pics/Wonderland_Maze.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   flex-direction: column;
@@ -49,7 +49,7 @@ body {
 
 .tile {
   background-color: rgb(96, 222, 226); 
-  background-image: url("/Cobblestone.png");
+  background-image: url("pics/Cobblestone.png");
   background-size: cover;
   border: 1px solid #373848; 
   box-sizing: border-box;
@@ -60,19 +60,19 @@ body {
 
 .player {
   box-sizing: border-box;
-  background-image: url("/Little_flame_character.gif");
+  background-image: url("pics/Little_flame_character.gif");
   background-color: blue;
 }
 
 .wall {
   background-color: #08281f;
-  background-image: url("/baum.png");
+  background-image: url("pics/baum.png");
   background-size: cover;
 }
 
 .victory {
   background-color: goldenrod;
-  background-image: url("/treasures.png")
+  background-image: url("pics/treasures.png")
 }
 .questiontime {
   border: 1px solid red;
