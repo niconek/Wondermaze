@@ -197,7 +197,7 @@ function askQuestion() {
   if ((game.player.y === 5 && game.player.x === 4) && !questions[0].answered) {
     console.log("ANSWER THIS QUESTION")
     var answer = prompt(questions[0].q)
-    if (answer.toLowerCase() === questions[0].a) {
+    if (answer !== null && answer.toLowerCase() === questions[0].a) {
       questions[0].answered = true
       $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
     } else {
@@ -211,7 +211,7 @@ function askQuestion() {
   if ((game.player.y === 15 && game.player.x === 5) && !questions[1].answered) {
     console.log("ANSWER THIS QUESTION")
     var answer = prompt(questions[1].q)
-    if (answer.toLowerCase() === questions[1].a) {
+    if (answer !== null && answer.toLowerCase() === questions[1].a) {
       questions[1].answered = true
       $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
     } else {
@@ -225,7 +225,7 @@ function askQuestion() {
   if ((game.player.y === 1 && game.player.x === 11) && !questions[2].answered) {
     console.log("ANSWER THIS QUESTION")
     var answer = prompt(questions[2].q)
-    if (answer.toLowerCase() === questions[2].a) {
+    if (answer !== null && answer.toLowerCase() === questions[2].a) {
       questions[2].answered = true
       $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
     } else {
@@ -239,7 +239,7 @@ function askQuestion() {
   if ((game.player.y === 1 && game.player.x === 11) && !questions[2].answered) {
     console.log("ANSWER THIS QUESTION")
     var answer = prompt(questions[2].q)
-    if (answer.toLowerCase() === questions[2].a) {
+    if (answer !== null && answer.toLowerCase() === questions[2].a) {
       questions[2].answered = true
       $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
     } else {
@@ -253,7 +253,7 @@ function askQuestion() {
   if ((game.player.y === 16 && game.player.x === 16) && !questions[3].answered) {
     console.log("ANSWER THIS QUESTION")
     var answer = prompt(questions[3].q)
-    if (answer.toLowerCase() === questions[3].a) {
+    if (answer !== null && answer.toLowerCase() === questions[3].a) {
       questions[3].answered = true
       $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
     } else {
@@ -267,7 +267,7 @@ function askQuestion() {
   if ((game.player.y === 19 && game.player.x === 19) && !questions[4].answered) {
     console.log("ANSWER THIS QUESTION")
     var answer = prompt(questions[4].q)
-    if (answer.toLowerCase() === questions[4].a) {
+    if (answer !== null && answer.toLowerCase() === questions[4].a) {
       questions[4].answered = true
       $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
     } else {
@@ -281,7 +281,7 @@ function askQuestion() {
   if ((game.player.y === 14 && game.player.x === 9) && !questions[5].answered) {
     console.log("ANSWER THIS QUESTION")
     var answer = prompt(questions[5].q)
-    if (answer.toLowerCase() === questions[5].a) {
+    if (answer !== null && answer.toLowerCase() === questions[5].a) {
       questions[5].answered = true
       $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
     } else {
