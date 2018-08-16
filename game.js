@@ -6,7 +6,7 @@
 
 function Game() {
   this.maze = [
-    
+
     ["P", "o", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
     ["W", "o", "W", "o", "o", "o", "o", "W", "W", "W", "o", "X", "o", "o", "o", "o", "W", "o", "o", "o", "W"],
     ["W", "o", "o", "o", "W", "W", "o", "W", "W", "o", "o", "W", "W", "W", "W", "o", "o", "o", "W", "o", "W"],
@@ -34,5 +34,6 @@ function Game() {
     x: 0,
     y: 0
   }
-}
 
+  this.question = 0;
+}

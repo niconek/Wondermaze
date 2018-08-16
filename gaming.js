@@ -17,13 +17,16 @@ Game.prototype.walkUp = function () {
     console.log("congrats!!!")
     // if he finds $$$ while going up (y-1)
     var victory = confirm("Congratulations, you found your way out!")
+  } else if (this.maze[this.player.y - 1][this.player.x] === "X") {
+    // question time
+    console.log("It's time to answer a question")
+    questionTime((this.player.y - 1), this.player.x);
   } else {
     this.player.y -= 1; //player now moved one up
     this.maze[this.player.y][this.player.x] = "P"; //new location on maze
     this.maze[this.player.y + 1][this.player.x] = "o";
   } //new location will turn to P, old one to open space
 }
-
 
 Game.prototype.walkDown = function () {
   if (this.player.y == this.maze.length - 1) {
@@ -37,6 +40,10 @@ Game.prototype.walkDown = function () {
     this.maze[this.player.y + 1][this.player.x] === "$") {
     // if he finds $$$ while going down (y+1)
     var victory = confirm("Congratulations, you found your way out!")
+  } else if (this.maze[this.player.y + 1][this.player.x] === "X") {
+    // question time
+    console.log("It's time to answer a question")
+    questionTime((this.player.y + 1), this.player.x);
   } else {
     this.player.y += 1; //this.player is now one step down(y+1)
     this.maze[this.player.y][this.player.x] = "P"; //new location on board
@@ -57,6 +64,10 @@ Game.prototype.walkRight = function () {
     this.maze[this.player.y][this.player.x + 1] === "$") {
     // if he finds $$$ while going right (x+1)
     var victory = confirm("Congratulations, you found your way out!");
+  } else if (this.maze[this.player.y][this.player.x + 1] === "X") {
+    // question time
+    console.log("It's time to answer a question")
+    questionTime(this.player.y, (this.player.x + 1));
   } else {
     this.player.x += 1; //this.player is now one step right(x+1)
     this.maze[this.player.y][this.player.x] = "P"; //new location on board
@@ -75,7 +86,10 @@ Game.prototype.walkLeft = function () {
   } else if (this.maze[this.player.y][this.player.x - 1] === "$") {
     // if he finds $$$ while going left (x-1)
     var victory = confirm("Congratulations, you found your way out!")
-
+  } else if (this.maze[this.player.y][this.player.x - 1] === "X") {
+    // question time
+    console.log("It's time to answer a question")
+    questionTime(this.player.y, (this.player.x - 1));
   } else {
     this.player.x -= 1; //this.player is now one step left (x-1)
     this.maze[this.player.y][this.player.x] = "P"; //new location on board
@@ -84,7 +98,7 @@ Game.prototype.walkLeft = function () {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////// Keys to move
+////////////////////////////////////////////////////////////////////////////////////// Keys to move
 
 $(window).on('keydown', function (event) {
   console.log(" you pressed a key ")
@@ -119,7 +133,6 @@ $(window).on('keydown', function (event) {
       console.log('unsupported key was pressed');
   }
   updateMaze()
-  askQuestion()
 });
 
 ////////////////////////////////////////////////////////////////////////////////////building mazetiles
@@ -157,147 +170,66 @@ function updateMaze() {
 }
 updateMaze();
 
-//////////////////////////////////////////////////////////////////////////////////////////QUESTIONTIME
-var questions = [{
-    q: "What belongs to you but is used more by others?",
-    a: "name",
-    answered: false
-  },
-  {
-    q: "What kind of room has no doors or windows?",
-    a: "mushroom",
-    answered: false
-  },
-  {
-    q: "I am a ship that can be made to ride the greatest waves. I am not built by tool, but built by hearts and minds. What am I?",
-    a: "friendship",
-    answered: false
-  },
-  {
-    q: "What is easy to get into, but hard to get out of?",
-    a: "trouble",
-    answered: false
-  },
-  {
-    q: "If I have it, I don't share it. If I share it, I don't have it. What is it?",
-    a: "secret",
-    answered: false
-  }, 
-  {
-    q: "What is the beginning of eternity, the end of time and space, the beginning of every end and the end of every race?",
-    a: "e",
-    answered: false
-  },
-];
-
-/////////////////////////////////////////////////////////////QUESTIONS
-
-function askQuestion() {
-
-  if ((game.player.y === 5 && game.player.x === 4) && !questions[0].answered) {
-    console.log("ANSWER THIS QUESTION")
-    var answer = prompt(questions[0].q)
-    if (answer !== null && answer.toLowerCase() === questions[0].a) {
-      questions[0].answered = true
-      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
-    } else {
-      game.player.y = 5
-      game.player.x = 5
-      game.maze[game.player.y][game.player.x] = "P"
-      game.maze[5][4] = "X"
-      updateMaze()
-    }
-  }
-  if ((game.player.y === 15 && game.player.x === 5) && !questions[1].answered) {
-    console.log("ANSWER THIS QUESTION")
-    var answer = prompt(questions[1].q)
-    if (answer !== null && answer.toLowerCase() === questions[1].a) {
-      questions[1].answered = true
-      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
-    } else {
-      game.player.y = 15
-      game.player.x = 4
-      game.maze[game.player.y][game.player.x] = "P"
-      game.maze[15][5] = "X"
-      updateMaze()
-    }
-  }
-  if ((game.player.y === 1 && game.player.x === 11) && !questions[2].answered) {
-    console.log("ANSWER THIS QUESTION")
-    var answer = prompt(questions[2].q)
-    if (answer !== null && answer.toLowerCase() === questions[2].a) {
-      questions[2].answered = true
-      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
-    } else {
-      game.player.y = 1
-      game.player.x = 10
-      game.maze[game.player.y][game.player.x] = "P"
-      game.maze[1][11] = "X"
-      updateMaze()
-    }
-  }
-  if ((game.player.y === 1 && game.player.x === 11) && !questions[2].answered) {
-    console.log("ANSWER THIS QUESTION")
-    var answer = prompt(questions[2].q)
-    if (answer !== null && answer.toLowerCase() === questions[2].a) {
-      questions[2].answered = true
-      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
-    } else {
-      game.player.y = 1
-      game.player.x = 10
-      game.maze[game.player.y][game.player.x] = "P"
-      game.maze[1][11] = "X"
-      updateMaze()
-    }
-  }
-  if ((game.player.y === 16 && game.player.x === 16) && !questions[3].answered) {
-    console.log("ANSWER THIS QUESTION")
-    var answer = prompt(questions[3].q)
-    if (answer !== null && answer.toLowerCase() === questions[3].a) {
-      questions[3].answered = true
-      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
-    } else {
-      game.player.y = 16
-      game.player.x = 17
-      game.maze[game.player.y][game.player.x] = "P"
-      game.maze[16][16] = "X"
-      updateMaze()
-    }
-  }
-  if ((game.player.y === 19 && game.player.x === 19) && !questions[4].answered) {
-    console.log("ANSWER THIS QUESTION")
-    var answer = prompt(questions[4].q)
-    if (answer !== null && answer.toLowerCase() === questions[4].a) {
-      questions[4].answered = true
-      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
-    } else {
-      game.player.y = 19
-      game.player.x = 18
-      game.maze[game.player.y][game.player.x] = "P"
-      game.maze[19][19] = "X"
-      updateMaze()
-    }
-  }
-  if ((game.player.y === 14 && game.player.x === 9) && !questions[5].answered) {
-    console.log("ANSWER THIS QUESTION")
-    var answer = prompt(questions[5].q)
-    if (answer !== null && answer.toLowerCase() === questions[5].a) {
-      questions[5].answered = true
-      $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
-    } else {
-      game.player.y = 15
-      game.player.x = 9
-      game.maze[game.player.y][game.player.x] = "P"
-      game.maze[14][9] = "X"
-      updateMaze()
-    }
-  }
-}
-
 ////////////////////////////////////////////////////////////////////////Restart Button
-
 $(".button").click(function () {
   console.log("clicked restart")
   game = new Game();
   updateMaze();
 })
+
+/////////////////////////////////////////////////////////////////////function QUESTIONTIME
+function questionTime(y, x) {
+  console.log("question time!!!!");
+  var question = questions[game.question];
+  var hints = question.hints.slice(0, question.asked).join("\n");
+  var answer = prompt(question.q + "\n" + hints);
+  if (answer !== null && question.a.includes(answer.toLowerCase())) {
+    game.question += 1;
+    game.maze[game.player.y][game.player.x] = "o"
+    game.maze[y][x] = "P";
+    game.player.y = y;
+    game.player.x = x;
+    $('#correct-answer').fadeIn().delay(1000).fadeOut('slow');
+  } else {
+    question.asked += 1;
+    $('#incorrect-answer').fadeIn().delay(1000).fadeOut('slow');
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////QUESTIONS
+var questions = [{
+    q: "What belongs to you but is used more by others?",
+    a: ["name"],
+    hints: ["You cannot touch it", "True friends change it", "1st letter is n"],
+    asked: 0
+  },
+  {
+    q: "What kind of room has no doors or windows?",
+    a: ["mushroom", "chatroom", "broom"],
+    hints: ["think outside the box", "go with the Alice in Wonderland theme here", "shiitake"],
+    asked: 0
+  },
+  {
+    q: "I am a ship that can be made to ride the greatest waves. I am not built by tool, but built by hearts and minds. What am I?",
+    a: ["friendship"],
+    hints: ["I get by with a little help", "What is it worth fighting for?", "1st letter is f"],
+    asked: 0
+  },
+  {
+    q: "What is easy to get into, but hard to get out of?",
+    a: ["trouble", "graveyard"],
+    hints: ["curiosity often leads to ...", "you rebel you", "1st letter is t"],
+    asked: 0
+  },
+  {
+    q: "If I have it, I don't share it. If I share it, I don't have it. What is it?",
+    a: ["secret"],
+    hints: ["But everybody wants to know", "gossip", "1st letter is s"],
+    asked: 0
+  },
+  {
+    q: "What is the beginning of eternity, the end of time and space, the beginning of every end and the end of every race?",
+    a: ["e"],
+    hints: ["It is quite obvious.", "Think in letters.", "17 times in this question"],
+    asked: 0
+  },
+];

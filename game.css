@@ -2,11 +2,8 @@ h1 {
   padding: 10px;
   font-size: 5em;
   letter-spacing: -3px;
-  color:  black;
-  text-shadow: -20px 30px 10px #f1b329,
-                20px -30px 10px #f1b329, 
-                -30px 20px 10px #be4a14, 
-                30px -20px 10px #be4a14;
+  color: black;
+  text-shadow: -20px 30px 10px #f1b329, 20px -30px 10px #f1b329, -30px 20px 10px #be4a14, 30px -20px 10px #be4a14;
 }
 
 body {
@@ -23,14 +20,14 @@ body {
 }
 
 .game {
-    min-width: 650px;
-    min-height: 640px;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-    clear: both;
-    
+  min-width: 650px;
+  min-height: 640px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  clear: both;
 }
-.button{
+
+.button {
   padding: 10px;
   margin: 20px;
   font-size: 1.5em;
@@ -38,6 +35,7 @@ body {
   border-radius: 20px;
   border-color: #9b390c;
 }
+
 #playground {
   width: 650px;
   height: 640px;
@@ -48,10 +46,10 @@ body {
 }
 
 .tile {
-  background-color: rgb(96, 222, 226); 
+  background-color: #373848;
   background-image: url("pics/Cobblestone.png");
   background-size: cover;
-  border: 1px solid #373848; 
+  border: 1px solid #373848;
   box-sizing: border-box;
   flex: 1;
   min-width: 4.762%;
@@ -74,9 +72,11 @@ body {
   background-color: goldenrod;
   background-image: url("pics/treasures.png")
 }
+
 .questiontime {
-  border: 1px solid #08281f; 
+  border: 1px solid #08281f;
 }
+
 .message {
   background-color: goldenrod;
 }
