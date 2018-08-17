@@ -1,7 +1,7 @@
 h1 {
   padding: 10px;
-  font-size: 5em;
-  letter-spacing: -3px;
+  font-size: 60px;
+  letter-spacing: -2px;
   color: black;
   text-shadow: -20px 30px 10px #f1b329, 20px -30px 10px #f1b329, -30px 20px 10px #be4a14, 30px -20px 10px #be4a14;
 }
@@ -28,6 +28,7 @@ body {
 }
 
 .button {
+  font-family: 'Playfair Display', serif;
   padding: 10px;
   margin: 20px;
   font-size: 1.5em;
@@ -69,7 +70,7 @@ body {
 }
 
 .victory {
-  background-color: goldenrod;
+  background-color: #be4a14;
   background-image: url("pics/treasures.png")
 }
 
@@ -78,5 +79,14 @@ body {
 }
 
 .message {
-  background-color: goldenrod;
+  position: absolute;
+  padding: 10px;
+  font-size: 60px;
+  letter-spacing: -3px;
+  color: #f1b329;
+  font-size: 30px;
+  top: 50%;
+  background-color: #be4a14;
+  border-color: #9b390c;
+  border-radius: 20px;
 }

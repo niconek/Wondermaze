@@ -39,7 +39,7 @@ Game.prototype.walkDown = function () {
   } else if (
     this.maze[this.player.y + 1][this.player.x] === "$") {
     // if he finds $$$ while going down (y+1)
-    var victory = confirm("Congratulations, you found your way out!")
+    $('#end').toggle()
   } else if (this.maze[this.player.y + 1][this.player.x] === "X") {
     // question time
     console.log("It's time to answer a question")
@@ -105,6 +105,7 @@ $(window).on('keydown', function (event) {
   console.log(event.which)
   switch (event.which) {
     case 38:
+    event.preventDefault()
       game.walkUp();
       console.log("position x after up -->", game.player.x)
       console.log("position y after up -->", game.player.y)
@@ -112,18 +113,21 @@ $(window).on('keydown', function (event) {
       break;
 
     case 40:
+    event.preventDefault()
       game.walkDown();
       console.log("position x after down -->", game.player.x)
       console.log("position y after down -->", game.player.y)
       break;
 
     case 39:
+    event.preventDefault()
       game.walkRight();
       console.log("position x after right -->", game.player.x)
       console.log("position y after right -->", game.player.y)
       break;
 
     case 37:
+    event.preventDefault()
       game.walkLeft();
       console.log("position x after left -->", game.player.x)
       console.log("position y after left -->", game.player.y)
@@ -198,37 +202,37 @@ function questionTime(y, x) {
 //////////////////////////////////////////////////////////////////////////////////QUESTIONS
 var questions = [{
     q: "What belongs to you but is used more by others?",
-    a: ["name"],
+    a: ["name", "love"],
     hints: ["You cannot touch it", "True friends change it", "1st letter is n"],
     asked: 0
   },
   {
     q: "What kind of room has no doors or windows?",
-    a: ["mushroom", "chatroom", "broom"],
+    a: ["mushroom", "chatroom", "broom", "love"],
     hints: ["think outside the box", "go with the Alice in Wonderland theme here", "shiitake"],
     asked: 0
   },
   {
     q: "I am a ship that can be made to ride the greatest waves. I am not built by tool, but built by hearts and minds. What am I?",
-    a: ["friendship"],
+    a: ["friendship", "love"],
     hints: ["I get by with a little help", "What is it worth fighting for?", "1st letter is f"],
     asked: 0
   },
   {
     q: "What is easy to get into, but hard to get out of?",
-    a: ["trouble", "graveyard"],
+    a: ["trouble", "graveyard", "love"],
     hints: ["curiosity often leads to ...", "you rebel you", "1st letter is t"],
     asked: 0
   },
   {
     q: "If I have it, I don't share it. If I share it, I don't have it. What is it?",
-    a: ["secret"],
+    a: ["secret", "love"],
     hints: ["But everybody wants to know", "gossip", "1st letter is s"],
     asked: 0
   },
   {
     q: "What is the beginning of eternity, the end of time and space, the beginning of every end and the end of every race?",
-    a: ["e"],
+    a: ["e", "love"],
     hints: ["It is quite obvious.", "Think in letters.", "17 times in this question"],
     asked: 0
   },
