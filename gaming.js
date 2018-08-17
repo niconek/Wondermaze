@@ -207,33 +207,33 @@ var questions = [{
     asked: 0
   },
   {
+    q: "If I have it, I don't share it. If I share it, I don't have it. What is it?",
+    a: ["secret", "love"],
+    hints: ["But everybody wants to know!", "gossip", "1st letter is s"],
+    asked: 0
+  },
+  {
     q: "What kind of room has no doors or windows?",
     a: ["mushroom", "chatroom", "broom", "love"],
-    hints: ["think outside the box", "go with the Alice in Wonderland theme here", "shiitake"],
+    hints: ["Think outside the box.", "Go with the Alice in Wonderland theme here.", "Shiitake is a ...?"],
     asked: 0
   },
   {
     q: "I am a ship that can be made to ride the greatest waves. I am not built by tool, but built by hearts and minds. What am I?",
     a: ["friendship", "love"],
-    hints: ["I get by with a little help", "What is it worth fighting for?", "1st letter is f"],
+    hints: ["I get by with a little help from my ...", "What is it worth fighting for?", "1st letter is f"],
     asked: 0
   },
   {
     q: "What is easy to get into, but hard to get out of?",
     a: ["trouble", "graveyard", "love"],
-    hints: ["curiosity often leads to ...", "you rebel you", "1st letter is t"],
-    asked: 0
-  },
-  {
-    q: "If I have it, I don't share it. If I share it, I don't have it. What is it?",
-    a: ["secret", "love"],
-    hints: ["But everybody wants to know", "gossip", "1st letter is s"],
+    hints: ["Curiosity often leads to ...?", "You rebel you!", "The 1st letter is t."],
     asked: 0
   },
   {
     q: "What is the beginning of eternity, the end of time and space, the beginning of every end and the end of every race?",
     a: ["e", "love"],
-    hints: ["It is quite obvious.", "Think in letters.", "17 times in this question"],
+    hints: ["It is quite obvious.", "Think in letters.", "18 times in this question"],
     asked: 0
   },
 ];
