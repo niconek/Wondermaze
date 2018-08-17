@@ -81,10 +81,9 @@ body {
 .message {
   position: absolute;
   padding: 10px;
-  font-size: 60px;
-  letter-spacing: -3px;
-  color: #f1b329;
   font-size: 30px;
+  letter-spacing: -2px;
+  color: black;
   top: 50%;
   background-color: #be4a14;
   border-color: #9b390c;

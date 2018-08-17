@@ -105,7 +105,7 @@ $(window).on('keydown', function (event) {
   console.log(event.which)
   switch (event.which) {
     case 38:
-    event.preventDefault()
+      event.preventDefault()
       game.walkUp();
       console.log("position x after up -->", game.player.x)
       console.log("position y after up -->", game.player.y)
@@ -113,21 +113,21 @@ $(window).on('keydown', function (event) {
       break;
 
     case 40:
-    event.preventDefault()
+      event.preventDefault()
       game.walkDown();
       console.log("position x after down -->", game.player.x)
       console.log("position y after down -->", game.player.y)
       break;
 
     case 39:
-    event.preventDefault()
+      event.preventDefault()
       game.walkRight();
       console.log("position x after right -->", game.player.x)
       console.log("position y after right -->", game.player.y)
       break;
 
     case 37:
-    event.preventDefault()
+      event.preventDefault()
       game.walkLeft();
       console.log("position x after left -->", game.player.x)
       console.log("position y after left -->", game.player.y)
@@ -203,7 +203,7 @@ function questionTime(y, x) {
 var questions = [{
     q: "What belongs to you but is used more by others?",
     a: ["name", "love"],
-    hints: ["You cannot touch it", "True friends change it", "1st letter is n"],
+    hints: ["You cannot touch it.", "True friends change it.", "The 1st letter is n."],
     asked: 0
   },
   {
